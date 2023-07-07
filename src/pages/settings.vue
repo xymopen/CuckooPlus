@@ -1,5 +1,5 @@
 <template>
-  <div class="setting-page-container">
+  <DefaultLayout class="setting-page-container">
     <mu-card v-loading="isLoading">
       <mu-card-actions class="setting-card">
         <p class="card-label">{{ $t($i18nTags.settings.general_label) }}</p>
@@ -125,7 +125,7 @@
 
     <input ref="importThemeInput" type="file" @change="onImportThemeColorSet" accept=".json" style="display: none" />
 
-  </div>
+  </DefaultLayout>
 </template>
 
 <route-meta>
@@ -140,6 +140,7 @@ import { State, Mutation, Action } from 'vuex-class'
 import { ThemeNames, I18nLocales, VisibilityTypes } from '@/constant'
 import * as moment from 'moment'
 import ThemeManager from '@/themes'
+import DefaultLayout from '@/layouts/default/index.vue'
 
 const ADD_NEW_THEME_OPTION = 'ADD_NEW_THEME_OPTION'
 
@@ -150,7 +151,11 @@ const presetThemeOptions = [
   { value: ThemeNames.CUCKOO_HUB },
 ]
 
-@Component({})
+@Component({
+  components: {
+    DefaultLayout
+  }
+})
 class Setting extends Vue {
 
   $refs: {

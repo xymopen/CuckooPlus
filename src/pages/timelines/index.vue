@@ -1,5 +1,5 @@
 <template>
-  <div class="timelines-container" ref="timelinesContainer" v-loading="isInitLoading">
+  <DefaultLayout class="timelines-container" ref="timelinesContainer" v-loading="isInitLoading">
 
     <template v-for="(timeLineName, index) in allTimeLineNameList">
       <mu-load-more :key="index" @load="loadStatuses(true)" v-show="isTimeLineNameEqualCurrentRoute(timeLineName)"
@@ -41,7 +41,7 @@
     <post-status-dialog :open.sync="isPostStatusDialogOpening" />
 
     <new-status-notice-button />
-  </div>
+  </DefaultLayout>
 </template>
 
 <route-meta>
@@ -60,6 +60,7 @@ import StatusCard from '@/components/StatusCard/index.vue'
 import PostStatusDialog from '@/components/PostStatusDialog.vue'
 import NewStatusNoticeButton from './components/NewStatusNoticeButton.vue'
 import PostStatusStampCard from './components/PostStatusStampCard.vue'
+import DefaultLayout from '@/layouts/default/index.vue'
 
 const noneCardFocusId = '-2'
 const stampCardFocusId = '-1'
@@ -104,7 +105,8 @@ function calcFitWaterFallLineCount (containerWidth: number, testLineCount: numbe
     'status-card': StatusCard,
     'post-status-dialog': PostStatusDialog,
     'new-status-notice-button': NewStatusNoticeButton,
-    'post-status-stamp-card': PostStatusStampCard
+    'post-status-stamp-card': PostStatusStampCard,
+    DefaultLayout
   }
 })
 class TimeLines extends Vue {
