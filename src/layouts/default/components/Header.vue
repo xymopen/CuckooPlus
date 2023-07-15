@@ -25,7 +25,7 @@
             <mu-popover cover lazy placement="left-start" style="width: 420px"
               :open="appStatus.isNotificationsPanelOpened" @close="updateNotificationsPanelStatus(false)"
               :trigger="notificationBtnTrigger">
-              <notifications />
+              <NotificationPanel />
             </mu-popover>
           </div>
           <template #else>
@@ -51,7 +51,7 @@ import { State, Mutation, Action, Getter } from 'vuex-class'
 import { TimeLineTypes, ThemeNames } from '@/constant'
 import { cuckoostore } from '@/interface'
 import { scrollToTop } from '@/utils'
-import Notifications from '@/components/Notifications/index.vue'
+import NotificationPanel from '@/components/NotificationPanel.vue'
 
 // todo 统一位置管理
 const pathToRouteInfo = {
@@ -68,7 +68,7 @@ const pathToRouteInfo = {
 
 @Component({
   components: {
-    'notifications': Notifications
+    NotificationPanel
   }
 })
 class Header extends Vue {
