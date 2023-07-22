@@ -13,7 +13,7 @@
     "watch": "webpack --watch",
     "serve": "webpack serve",
     "dev": "webpack serve --mode=development",
-    "lint": "eslint -c .eslintrc.js --ext .tsx,.ts,.jsx,.js,.vue src/ lib/"
+    "lint": "eslint -c .eslintrc.js --ext .tsx,.ts,.jsx,.js,.vue src/ lib/ packages/"
   },
   "packageManager": "pnpm@9.7.1",
   "engines": {
