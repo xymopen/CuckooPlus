@@ -9,10 +9,6 @@ export default {
     state.appStatus.isDrawerOpened = isDrawerOpened
   },
 
-  updateNotificationsPanelStatus (state: cuckoostore.stateInfo, isNotificationsPanelOpened: boolean) {
-    state.appStatus.isNotificationsPanelOpened = isNotificationsPanelOpened
-  },
-
   updateUnreadNotificationCount (state: cuckoostore.stateInfo, count: number) {
     state.appStatus.unreadNotificationCount = count
   },
