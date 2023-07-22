@@ -1,4 +1,4 @@
-import { Sm, Md, Lg } from '@/components/Breakpoints'
+import { Sm, Md, Lg } from 'packages/breakpoints/components'
 import DefaultLayout from '@/layouts/default/index.vue'
 import PlainLayout from '@/layouts/plain.vue'
 import { RouterView, RouterLink } from 'vue-router'

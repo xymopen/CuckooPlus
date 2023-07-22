@@ -11,7 +11,7 @@
     "build:prod": "webpack --mode=production --define-process-env-node-env=production",
     "watch": "webpack --watch",
     "serve": "webpack serve",
-    "lint": "eslint -c .eslintrc.js --ext .tsx,.ts,.jsx,.js,.vue src/ lib/"
+    "lint": "eslint -c .eslintrc.js --ext .tsx,.ts,.jsx,.js,.vue src/ lib/ packages/"
   },
   "packageManager": "pnpm@8.6.11",
   "engines": {
