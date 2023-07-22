@@ -17,13 +17,16 @@ module.exports = {
           // promise polyfill alone doesn't work in IE,
           // needs this as well. see: vuejs/vue-cli#1642
           "es.array.iterator",
-          // this is required for webpack code splitting, vuex etc.
-          "es.promise",
           // this is needed for object rest spread support in templates
           // as vue-template-es2015-compiler 1.8+ compiles it to Object.assign() calls.
-          "es.object.assign",
+          "es.object.assign"
+
+          // It seems Promise polyfill is conflecting with setImmediate
+          //
+          // this is required for webpack code splitting, vuex etc.
+          // "es.promise",
           // #2012 es.promise replaces native Promise in FF and causes missing finally
-          "es.promise.finally"
+          // "es.promise.finally"
         ]
       }
     ],
