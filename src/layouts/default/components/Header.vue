@@ -22,10 +22,9 @@
               <mu-badge class="notification-badge" v-if="appStatus.unreadNotificationCount > 0"
                 :content="String(appStatus.unreadNotificationCount)" circle color="primary" />
             </mu-button>
-            <mu-popover cover lazy placement="left-start" style="width: 420px"
-              :open="isNotificationsPanelOpened" @close="isNotificationsPanelOpened = false"
-              :trigger="notificationBtnTrigger">
-              <NotificationPanel />
+            <mu-popover cover :lazy="false" placement="left-start" style="width: 420px"
+              :open.sync="isNotificationsPanelOpened" :trigger="notificationBtnTrigger">
+              <NotificationPanel ref="notificationPanel" />
             </mu-popover>
           </div>
           <template #else>
@@ -47,7 +46,7 @@
 
 <script lang="ts">
 import { Vue, Component, Watch } from 'vue-property-decorator'
-import { State, Mutation, Action, Getter } from 'vuex-class'
+import { State, Mutation, Getter } from 'vuex-class'
 import { TimeLineTypes, ThemeNames } from '@/constant'
 import { cuckoostore } from '@/interface'
 import { scrollToTop } from '@/utils'
@@ -73,8 +72,9 @@ const pathToRouteInfo = {
 })
 class Header extends Vue {
 
-  $refs: {
+  declare $refs: {
     notificationBtn: any,
+    notificationPanel: InstanceType<typeof NotificationPanel> | null,
   }
 
   notificationBtnTrigger: HTMLButtonElement = null
@@ -83,13 +83,9 @@ class Header extends Vue {
 
   @State('mastodonServerUri') mastodonServerUri
 
-  @Action('updateNotifications') updateNotifications
-
   @Getter('isOAuthUser') isOAuthUser
 
   @Mutation('updateDrawerOpenStatus') updateDrawerOpenStatus
-
-  @Mutation('updateUnreadNotificationCount') updateUnreadNotificationCount
 
   pathToRouteInfo = pathToRouteInfo
 
@@ -142,15 +138,8 @@ class Header extends Vue {
   }
 
   onOpenNotificationPanel () {
-    this.onFetchMoreNotifications()
-    this.updateUnreadNotificationCount(0)
+    this.$refs.notificationPanel!.loadNotifications()
     this.isNotificationsPanelOpened = !this.isNotificationsPanelOpened
-  }
-
-  async onFetchMoreNotifications () {
-    await this.updateNotifications({
-      isFetchMore: true
-    })
   }
 }
 
