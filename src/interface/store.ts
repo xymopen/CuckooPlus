@@ -45,7 +45,6 @@ export namespace cuckoostore {
 
     appStatus: {
       documentWidth: number
-      isDrawerOpened: boolean
       unreadNotificationCount: number
       isEditingThemeMode: boolean
       shouldShowThemeEditPanel: boolean

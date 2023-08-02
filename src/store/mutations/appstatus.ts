@@ -5,10 +5,6 @@ import { cuckoostore } from '@/interface'
 import ThemeManager from '@/themes'
 
 export default {
-  updateDrawerOpenStatus (state: cuckoostore.stateInfo, isDrawerOpened: boolean) {
-    state.appStatus.isDrawerOpened = isDrawerOpened
-  },
-
   updateUnreadNotificationCount (state: cuckoostore.stateInfo, count: number) {
     state.appStatus.unreadNotificationCount = count
   },
