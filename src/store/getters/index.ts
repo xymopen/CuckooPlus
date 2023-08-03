@@ -32,10 +32,6 @@ const getters = {
     return state.OAuthInfo.accessToken
   },
 
-  isMobileMode (state: cuckoostore.stateInfo) {
-    return state.appStatus.documentWidth < UiWidthCheckConstants.DRAWER_DOCKING_BOUNDARY
-  },
-
   shouldDialogFullScreen (state: cuckoostore.stateInfo) {
     return state.appStatus.documentWidth <= UiWidthCheckConstants.POST_STATUS_DIALOG_TOGGLE_WIDTH
   }
