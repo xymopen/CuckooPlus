@@ -29,9 +29,6 @@ importers:
       file-saver:
         specifier: ^2.0.1
         version: 2.0.1
-      jquery:
-        specifier: ^3.4.1
-        version: 3.4.1
       lodash:
         specifier: npm:lodash-es@^4.17.21
         version: lodash-es@4.17.21
@@ -129,9 +126,6 @@ importers:
       '@types/dompurify':
         specifier: ^3.0.2
         version: 3.0.5
-      '@types/jquery':
-        specifier: ^3.3.31
-        version: 3.3.31
       '@types/less':
         specifier: ^3.0.0
         version: 3.0.0
@@ -1085,9 +1079,6 @@ packages:
   '@types/http-proxy@1.17.11':
     resolution: {integrity: sha512-HC8G7c1WmaF2ekqpnFq626xd3Zz0uvaqFmBJNRZCGEZCXkvSdJoNFn/8Ygbd9fKNQj8UzLdCETaI0UWPAjK7IA==}
 
-  '@types/jquery@3.3.31':
-    resolution: {integrity: sha512-Lz4BAJihoFw5nRzKvg4nawXPzutkv7wmfQ5121avptaSIXlDNJCUuxZxX/G+9EVidZGuO0UBlk+YjKbwRKJigg==}
-
   '@types/json-schema@7.0.12':
     resolution: {integrity: sha512-Hr5Jfhc9eYOQNPYO5WLDq/n4jqijdHNlDXjuAQkkt+mWdQR+XJToOHrsD4cPaMXpn6KO7y2+wM8AZEs8VpBLVA==}
 
@@ -1150,9 +1141,6 @@ packages:
 
   '@types/serve-static@1.15.2':
     resolution: {integrity: sha512-J2LqtvFYCzaj8pVYKw8klQXrLLk7TBZmQ4ShlcdkELFKGwGMfevMLneMMRkMgZxotOD9wg497LpC7O8PcvAmfw==}
-
-  '@types/sizzle@2.3.3':
-    resolution: {integrity: sha512-JYM8x9EGF163bEyhdJBpR2QX1R5naCJHC8ucJylJ3w9/CVBaskdQ8WqBf8MmQrd1kRvp/a4TS8HJ+bxzR7ZJYQ==}
 
   '@types/sockjs@0.3.33':
     resolution: {integrity: sha512-f0KEEe05NvUnat+boPTZ0dgaLZ4SfSouXUgv5noUiefG2ajgKjmETo9ZJyuqsl7dfl2aHlLJUiki6B4ZYldiiw==}
@@ -3098,9 +3086,6 @@ packages:
   jiti@1.21.6:
     resolution: {integrity: sha512-2yTgeWTWzMWkHu6Jp9NKgePDaYHbntiwvYuuJLbbN9vl7DC9DvXKOB2BC3ZZ92D3cvV/aflH0osDfwpHepQ53w==}
     hasBin: true
-
-  jquery@3.4.1:
-    resolution: {integrity: sha512-36+AdBzCL+y6qjw5Tx7HgzeGCzC81MDDgaUP8ld2zhx58HdqXGoBd+tHdrBMiyjGQs0Hxs/MLZTu/eHNJJuWPw==}
 
   js-beautify@1.14.8:
     resolution: {integrity: sha512-4S7HFeI9YfRvRgKnEweohs0tgJj28InHVIj4Nl8Htf96Y6pHg3+tJrmo4ucAM9f7l4SHbFI3IvFAZ2a1eQPbyg==}
@@ -6006,10 +5991,6 @@ snapshots:
     dependencies:
       '@types/node': 20.4.0
 
-  '@types/jquery@3.3.31':
-    dependencies:
-      '@types/sizzle': 2.3.3
-
   '@types/json-schema@7.0.12': {}
 
   '@types/keyv@3.1.4':
@@ -6068,8 +6049,6 @@ snapshots:
       '@types/http-errors': 2.0.1
       '@types/mime': 3.0.1
       '@types/node': 20.4.0
-
-  '@types/sizzle@2.3.3': {}
 
   '@types/sockjs@0.3.33':
     dependencies:
@@ -8087,8 +8066,6 @@ snapshots:
       supports-color: 8.1.1
 
   jiti@1.21.6: {}
-
-  jquery@3.4.1: {}
 
   js-beautify@1.14.8:
     dependencies:
