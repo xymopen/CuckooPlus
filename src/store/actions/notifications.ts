@@ -1,6 +1,9 @@
 import * as api from '@/api'
+import { ref } from "vue"
 import { NotificationTypes } from '@/constant'
 import { mastodonentities } from "@/interface"
+
+export const notificationFilters = ref<string[]>([])
 
 const notifications = {
 
@@ -25,6 +28,14 @@ const notifications = {
 
     try {
       const result = await api.notifications.getNotifications({ max_id: maxId, since_id: sinceId })
+
+      result.data = result.data.filter(({ status }) => {
+        if (status == null) {
+          return true
+        } else {
+          return notificationFilters.value.every(filter => !status.content.includes(filter))
+        }
+      })
 
       commit(mutationName, result.data)
 
