@@ -5,17 +5,17 @@ export default {
       {
         test: /\.(png|jpg|gif)$/i,
         type: "asset",
-        generator: { filename: 'img/[name].[hash:8][ext]' },
+        generator: { filename: 'img/[name].[contenthash][ext]' },
       },
       {
         test: /\.(svg)$/i,
         type: "asset/resource",
-        generator: { filename: 'img/[name].[hash:8][ext]' },
+        generator: { filename: 'img/[name].[contenthash][ext]' },
       },
       {
         test: /\.(eot|ttf|woff|woff2)$/i,
         type: "asset",
-        generator: { filename: 'fonts/[name].[hash:8][ext]' },
+        generator: { filename: 'fonts/[name].[contenthash][ext]' },
       }
     ]
   }
